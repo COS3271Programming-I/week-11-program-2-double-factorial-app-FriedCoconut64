@@ -1,0 +1,35 @@
+package myMain;
+import java.util.Scanner;
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.io.FileNotFoundException;
+import java.io.DataInput;
+import java.io.File;
+
+public class MyClass {
+	 
+	 static Scanner userinput = new Scanner(System.in);
+
+	 public static void main (String[] args){  
+		 System.out.println("Enter an integer between 0 and 20: ");//ask user for info
+		 int n = userinput.nextInt();
+		 
+		 if (n<0 || n>20) {
+			 System.out.println("Invalid input. Please try again.");//error trap
+		 }else {
+			 int result = DoubleFactorialAPP(n);
+			 System.out.println(n + "!! = " + result);
+		 }
+	 }
+
+	 private static int DoubleFactorialAPP(int n) {
+		if (n == 0 || n == 1) {
+		return 1;
+		}
+		return n * DoubleFactorialAPP(n - 2); //recursive method of calculating
+	}
